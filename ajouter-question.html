@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Ajouter une question</title>
+</head>
+<body>
+<h1>Ajouter une question à un examen</h1>
+<form id="form-question">
+<input type="text" id="proprietaire" placeholder="Nom du propriétaire"
+required><br>
+<input type="text" id="nom-examen" placeholder="Nom de l'examen"
+required><br>
+<textarea id="enonce" placeholder="Énoncé de la question"
+required></textarea><br>
+<input type="number" id="duree" placeholder="Durée (secondes)"
+required><br>
+<input type="number" id="points" placeholder="Points" required><br>
+<div id="propositions"></div>
+<button type="button" id="add-proposition">Ajouter une
+proposition</button><br><br>
+<button type="submit">Ajouter la question</button>
+</form>
+<script src="ajouter-question.js"></script>
+</body>
+</html>

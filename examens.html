@@ -1,0 +1,31 @@
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Liste des examens</title>
+</head>
+<body>
+<h1>Examens enregistrés</h1>
+<input type="text" id="proprietaire" placeholder="Nom du propriétaire">
+<button id="afficher">Afficher</button>
+<div id="resultat"></div>
+<script>
+// TODO : Ajouter un écouteur d'événement pour afficher les examens du
+//propriétaire
+document.getElementById('afficher').addEventListener('click', () => {
+const prop = document.getElementById('proprietaire').value;
+const exams = JSON.parse(localStorage.getItem('examens_' + prop)) || [];
+const container = document.getElementById('resultat');
+container.innerHTML = '';
+// TODO : Afficher les examens et leurs questions
+exams.forEach((exam, i) => {
+const div = document.createElement('div');
+div.innerHTML = `<h2>${exam.nom} (${exam.duree} min)</h2>
+<p>${exam.description}</p>
+<ul>${exam.questions.map(q =>
+`<li>${q.enonce}</li>`).join('')}</ul>`;
+container.appendChild(div);
+});
+});
+</script>
+</body>
+</html>
